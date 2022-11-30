@@ -29,5 +29,5 @@ jobs:
           echo step ${{ env.STEP_VARIABLE }}
       - name: say hello if monday
         if: ${{ env.DAY_OF_WEEK == 'Monday' }}
-        run: hello on ${{ end.DAY_OF_WEEK }}
+        run: hello on ${{ env.DAY_OF_WEEK }}
         
