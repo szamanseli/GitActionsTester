@@ -1,0 +1,29 @@
+name: envar tutorial
+env: 
+  WORKFLOW_VARIABLE: "this is a work flow variable"
+  
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env: 
+      JOB_VARIABLE: "this is a job variable"
+      
+    steps:
+      - name: print environment variables
+        env:
+          STEP_VARIABLE: "this is a step variable"
+        run: |
+          echo my variables
+          echo workflow {{env.WORKFLOW_VARIABLE}}
+          echo job {{env.JOB_VARIABLE}}
+          echo step {{env.STEP_VARIABLE}}
+        
