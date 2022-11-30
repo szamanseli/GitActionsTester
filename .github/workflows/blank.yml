@@ -23,7 +23,7 @@ jobs:
           STEP_VARIABLE: "this is a step variable"
         run: |
           echo my variables
-          echo workflow {{env.WORKFLOW_VARIABLE}}
-          echo job {{env.JOB_VARIABLE}}
-          echo step {{env.STEP_VARIABLE}}
+          echo workflow ${{ env.WORKFLOW_VARIABLE }}
+          echo job ${{ env.JOB_VARIABLE }}
+          echo step ${{ env.STEP_VARIABLE }}
         
