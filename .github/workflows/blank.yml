@@ -1,6 +1,7 @@
 name: envar tutorial
 env: 
   WORKFLOW_VARIABLE: "this is a work flow variable"
+  DAY_OF_WEEK: "Monday"
   
 on:
   push:
@@ -26,4 +27,7 @@ jobs:
           echo workflow ${{ env.WORKFLOW_VARIABLE }}
           echo job ${{ env.JOB_VARIABLE }}
           echo step ${{ env.STEP_VARIABLE }}
+      - name: say hello if monday
+        if: ${{ env.DAY_OF_WEEK == 'Monday' }}
+        run: hello on ${{ end.DAY_OF_WEEK }}
         
